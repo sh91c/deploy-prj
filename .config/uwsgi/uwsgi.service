@@ -1,0 +1,17 @@
+[Unit]
+Description=uWSGI service
+After=syslog.target
+
+# uWSGI가 실행되는 명령어
+# ExecStart 부분이 리눅스에서 실행하는 명령어가 된다.
+[Service]
+ExecStart=/home/ubuntu/.pyenv/versions/uwsgi/bin/uwsgi -i /srv/deploy-prj/.config/uwsgi/deploy.ini
+
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
