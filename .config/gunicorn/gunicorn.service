@@ -13,7 +13,7 @@ Group=deploy
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
 RuntimeDirectory=gunicorn
 WorkingDirectory=/srv/deploy-prj
-ExecStart=/home/ubuntu/.pyenv/versions/gunicorn/bin/gunicorn --bind unix:/tmp/gunicorn.sock config.wsgi:application
+ExecStart=/home/ubuntu/.pyenv/versions/gunicorn/bin/gunicorn --bind unix:///tmp/gunicorn.sock config.wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
