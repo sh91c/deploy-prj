@@ -12,6 +12,5 @@ ExecStart=/home/ubuntu/.pyenv/versions/gunicorn/bin/gunicorn config.asgi:applica
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
-PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
