@@ -46,7 +46,7 @@ def sync_view(request):
 
 @api_view(['GET'])
 async def non_deco_async_view(request):
-    await asyncio.sleep(0)
+    time.sleep(1)
 
     return Response(
         data={
