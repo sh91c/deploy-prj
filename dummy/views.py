@@ -1,3 +1,5 @@
+import time
+
 from asgiref.sync import sync_to_async
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -7,7 +9,7 @@ from rest_framework.response import Response
 @sync_to_async
 @api_view(['GET'])
 def sync_to_async_view(request):
-
+    time.sleep(1)
     return Response(
         data={
             "TEST sync_to_async TEST"
@@ -17,7 +19,7 @@ def sync_to_async_view(request):
 
 @api_view(['GET'])
 def sync_view(request):
-
+    time.sleep(1)
     return Response(
         data={
             "TEST sync TEST"
