@@ -24,6 +24,6 @@ def sync_view(request):
 
     return Response(
         data={
-            "TEST sync_to_async TEST"
+            "TEST sync TEST"
         }, status=status.HTTP_200_OK
     )
