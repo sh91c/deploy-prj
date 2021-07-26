@@ -1,7 +1,3 @@
-import datetime
-
-today = str(datetime.datetime.today)
-
 bind = "unix:/tmp/uvicorn.sock"
 # wsgi_app = "config.wsgi:application"
 backlog = 2048
@@ -19,8 +15,8 @@ user = "deploy"
 group = "deploy"
 tmp_upload_dir = None
 gunicorn_log = True
-accesslog = f"/var/log/uvicorn/{today}.log"
+accesslog = f"/var/log/uvicorn/@(exec://date +%%Y-%%m-%%d).log"
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
-errorlog = f"/var/log/uvicorn/{today}.log"
+errorlog = f"/var/log/uvicorn/@(exec://date +%%Y-%%m-%%d).log"
 loglevel = "debug"
 proc_name = None
