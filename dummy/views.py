@@ -7,8 +7,6 @@ from rest_framework.response import Response
 @sync_to_async
 @api_view(['GET'])
 def sync_to_async_view(request):
-    for i in range(0, 100000):
-        print(i)
 
     return Response(
         data={
@@ -19,8 +17,6 @@ def sync_to_async_view(request):
 
 @api_view(['GET'])
 def sync_view(request):
-    for i in range(0, 100000):
-        print(i)
 
     return Response(
         data={
