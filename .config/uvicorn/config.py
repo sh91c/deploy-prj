@@ -17,5 +17,3 @@ loglevel = "info"
 accesslog = "/var/log/uvicorn/access.log"
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
 proc_name = None
-
-customlogger = "/srv/deploy-prj/.config/uvicorn/customlogger.py"
