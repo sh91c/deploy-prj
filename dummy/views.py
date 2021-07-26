@@ -1,3 +1,4 @@
+import asyncio
 import time
 
 from asgiref.sync import sync_to_async
@@ -23,5 +24,15 @@ def sync_view(request):
     return Response(
         data={
             "TEST sync TEST"
+        }, status=status.HTTP_200_OK
+    )
+
+
+async def non_deco_async_view(request):
+    await asyncio.sleep(1)
+
+    return Response(
+        data={
+            "TEST non_deco_async TEST"
         }, status=status.HTTP_200_OK
     )
