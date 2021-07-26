@@ -48,7 +48,6 @@ def sync_view(request):
     )
 
 
-@api_view(['GET'])
-async def async_view(MiddlewareMixin, request):
+async def async_view(request):
     await asyncio.sleep(1)
     return HttpResponse("Made a pretty page asynchronously.")
