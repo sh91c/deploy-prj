@@ -3,8 +3,10 @@ Description=uvicorn service
 After=network.target
 
 [Service]
+Type=notify
 User=deploy
 Group=deploy
+RuntimeDirectory=gunicorn
 WorkingDirectory=/srv/deploy-prj
 #ExecStart=/home/ubuntu/.pyenv/versions/gunicorn/bin/gunicorn --bind unix:/tmp/uvicorn.sock config.asgi:application -w 4 -k uvicorn.workers.UvicornWorker --access-logfile /var/log/uvicorn/access.log --error-logfile /var/log/uvicorn/error.log --access-logformat '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"' --log-level info
 ExecStart=/home/ubuntu/.pyenv/versions/gunicorn/bin/gunicorn -c /srv/deploy-prj/.config/uvicorn/config.py config.asgi:application
