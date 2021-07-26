@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
-@sync_to_async
+@sync_to_async(thread_sensitive=False)
 @api_view(['GET'])
 def sync_to_async_view(request):
     time.sleep(1)
