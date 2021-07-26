@@ -18,5 +18,5 @@ gunicorn_log = True
 accesslog = "/var/log/uvicorn/access.log"
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
 errorlog = "/var/log/uvicorn/error.log"
-loglevel = "debug"
+loglevel = "critical"
 proc_name = None
