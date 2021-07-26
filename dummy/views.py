@@ -24,7 +24,7 @@ def simple_middleware(get_response):
 
     return middleware
 
-@sync_to_async(thread_sensitive=True)
+@sync_to_async(thread_sensitive=False)
 @api_view(['GET'])
 def sync_to_async_view(request):
     time.sleep(1)
@@ -44,6 +44,7 @@ def sync_view(request):
         }, status=status.HTTP_200_OK
     )
 
+@sync_to_async(thread_sensitive=True)
 @api_view(['GET'])
 async def non_deco_async_view(request):
     time.sleep(1)
