@@ -6,12 +6,23 @@ from rest_framework.response import Response
 
 @sync_to_async
 @api_view(['GET'])
-def test_view(request):
-    for i in range(0, 100):
+def sync_to_async_view(request):
+    for i in range(0, 10000000):
         print(i)
 
     return Response(
         data={
-            "success"
+            "TEST sync_to_async TEST"
+        }, status=status.HTTP_200_OK
+    )
+
+@api_view(['GET'])
+def sync_view(request):
+    for i in range(0, 10000000):
+        print(i)
+
+    return Response(
+        data={
+            "TEST sync_to_async TEST"
         }, status=status.HTTP_200_OK
     )
