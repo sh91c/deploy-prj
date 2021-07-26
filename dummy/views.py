@@ -27,7 +27,7 @@ def sync_view(request):
         }, status=status.HTTP_200_OK
     )
 
-
+@api_view(['GET'])
 async def non_deco_async_view(request):
     await asyncio.sleep(1)
 
