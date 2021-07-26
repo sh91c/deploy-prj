@@ -49,4 +49,5 @@ def sync_view(request):
 
 
 async def async_view(request):
+    await asyncio.sleep(1)
     return HttpResponse("Made a pretty page asynchronously.")
