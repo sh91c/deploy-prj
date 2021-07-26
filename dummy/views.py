@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.utils.decorators import sync_and_async_middleware
 
+
 @sync_and_async_middleware
 def simple_middleware(get_response):
     # One-time configuration and initialization goes here.
@@ -24,6 +25,7 @@ def simple_middleware(get_response):
             return response
 
     return middleware
+
 
 @sync_to_async(thread_sensitive=False)
 @api_view(['GET'])
@@ -46,6 +48,5 @@ def sync_view(request):
     )
 
 
-@api_view(['GET'])
 async def async_view(request):
     return HttpResponse("Made a pretty page asynchronously.")
